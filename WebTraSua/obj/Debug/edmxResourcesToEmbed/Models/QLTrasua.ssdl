@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLTraSuaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChiTietHoaDon">
+    <Key>
+      <PropertyRef Name="MaChiTietHD" />
+    </Key>
+    <Property Name="MaChiTietHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaHD" Type="int" />
+    <Property Name="MaTS" Type="int" />
+    <Property Name="SoLuong" Type="int" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ngay" Type="datetime" />
+    <Property Name="MaNhanVien" Type="int" />
+    <Property Name="MaTP" Type="int" />
+    <Property Name="TongTien" Type="float" />
+    <Property Name="GiamGia" Type="float" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="MaNhanVien" />
+    </Key>
+    <Property Name="MaNhanVien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="30" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="500" />
+    <Property Name="TenDangNhap" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Thanhtoan">
+    <Key>
+      <PropertyRef Name="MaTT" />
+    </Key>
+    <Property Name="MaTT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NgayTT" Type="datetime" />
+    <Property Name="MaHD" Type="int" />
+    <Property Name="TongtienTT" Type="money" />
+  </EntityType>
+  <EntityType Name="Thuonghieu">
+    <Key>
+      <PropertyRef Name="MaTH" />
+    </Key>
+    <Property Name="MaTH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTH" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Trasua">
+    <Key>
+      <PropertyRef Name="MaTS" />
+    </Key>
+    <Property Name="MaTS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTS" Type="nvarchar" MaxLength="30" />
+    <Property Name="GiaTS" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MaTH" Type="int" />
+    <Property Name="TenTH" Type="varchar" MaxLength="50" />
+    <Property Name="Moi" Type="int" />
+    <Property Name="AnhBia" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_ChiTietHoaDon_HoaDon">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="0..1" />
+    <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="ChiTietHoaDon">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietHoaDon_Trasua">
+    <End Role="Trasua" Type="Self.Trasua" Multiplicity="0..1" />
+    <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trasua">
+        <PropertyRef Name="MaTS" />
+      </Principal>
+      <Dependent Role="ChiTietHoaDon">
+        <PropertyRef Name="MaTS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDon_NhanVien">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNhanVien" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="MaNhanVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Thanhtoan_Hoadon">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="0..1" />
+    <End Role="Thanhtoan" Type="Self.Thanhtoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="Thanhtoan">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trasua_Thuonghieu">
+    <End Role="Thuonghieu" Type="Self.Thuonghieu" Multiplicity="0..1" />
+    <End Role="Trasua" Type="Self.Trasua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Thuonghieu">
+        <PropertyRef Name="MaTH" />
+      </Principal>
+      <Dependent Role="Trasua">
+        <PropertyRef Name="MaTH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLTraSuaModelStoreContainer">
+    <EntitySet Name="ChiTietHoaDon" EntityType="Self.ChiTietHoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Thanhtoan" EntityType="Self.Thanhtoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Thuonghieu" EntityType="Self.Thuonghieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trasua" EntityType="Self.Trasua" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ChiTietHoaDon_HoaDon" Association="Self.FK_ChiTietHoaDon_HoaDon">
+      <End Role="HoaDon" EntitySet="HoaDon" />
+      <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietHoaDon_Trasua" Association="Self.FK_ChiTietHoaDon_Trasua">
+      <End Role="Trasua" EntitySet="Trasua" />
+      <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDon_NhanVien" Association="Self.FK_HoaDon_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Thanhtoan_Hoadon" Association="Self.FK_Thanhtoan_Hoadon">
+      <End Role="HoaDon" EntitySet="HoaDon" />
+      <End Role="Thanhtoan" EntitySet="Thanhtoan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trasua_Thuonghieu" Association="Self.FK_Trasua_Thuonghieu">
+      <End Role="Thuonghieu" EntitySet="Thuonghieu" />
+      <End Role="Trasua" EntitySet="Trasua" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

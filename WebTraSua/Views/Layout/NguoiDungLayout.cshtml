@@ -1,0 +1,130 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="~/Content/NguoiDungLayoutCss/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link href="~/Content/NguoiDungLayoutCss/main.css" rel="stylesheet" />
+</head>
+@RenderBody()
+<header>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJZQSJF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <div class="wrapper">
+        <div class="header">
+            <div class="sign">
+                @Html.ActionLink("Đăng ký", "Dangky", null, htmlAttributes: new { @class = "DangKy" })
+                @Html.ActionLink("Đăng Nhập", "Dangnhap", null, htmlAttributes: new { @class = "DangNhap" })
+
+            </div>
+            <a href="">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+
+            <p class="phone_number">
+                1900 2561
+            </p>
+
+        </div>
+        <div class="nav_bar">
+            <a href="">
+                <img class="logo" src="~/anh/logo.png" alt="">
+            </a>
+            <div class="menu">
+                <div class="search">
+                    <input class="search_item" type="search" placeholder="Search...">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <ul class="main_menu">
+                    <li><a clas="menu_item" href="index.html"> TRANG CHỦ</a></li>
+                    <li><a clas="menu_item" href="index.html"> GIỚI THIỆU </a></li>
+                    <li><a clas="menu_item" href="index.html"> THỰC ĐƠN</a></li>
+                    <li><a clas="menu_item" href="index.html"> TIN TỨC</a></li>
+                    <li><a clas="menu_item" href="index.html"> GIỎ HÀNG</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="main_content">
+            <a href="">
+                <img class="content" src="~/anh/mua2tang1.png" alt="">
+            </a>
+        </div>
+        <!--them san pham-->
+        <!--chen vao partial view tra sua hot-->
+        <div class="product">
+
+            <div class="headlien">
+                <h3>Sản phẩm bán chạy</h3>
+            </div>
+            <ul class="products">
+                @Html.Action("TSHotPartial", "Home")
+            </ul>
+        </div>
+
+
+        <!--ket web-->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>NHÓM PHÁT TRIỂN</h4>
+                        <ul>
+                            <li><a href="">THÀNH VIÊN NHÓM</a></li>
+                            <li><a href="">Phan Văn Đạt</li>
+                            <li><a href="">Nguyễn Trần Thành An</li>
+                            <li><a href="">Trần Khôi Nguyên</li>
+                            <li><a href="">Nguyễn Ngọc Tân </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                        <ul>
+                            <li><a href="">Tổng Đài: 086 368 7466</li>
+                            <li><a href="">P. Hỗ trợ khách hàng: </li>
+                            <li><a href="">phandat6602@gmail.con</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>GIỚI THIỆU</h4>
+                        <ul>
+                            <li><a href="">Trang Chủ</a></li>
+                            <li><a href="">Giới Thiệu</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>LIÊN HỆ</h4>
+                        <div class="social-licks">
+                            <a href="">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-solid fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</header>
+</body>
+</html>

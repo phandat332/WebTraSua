@@ -5,5 +5,26 @@
     ViewBag.Title = "Index";
 }
 
+<div>
+    <div class="main_content" style="justify-content: center;">
+        <a href="">
+                <img class="content" src="~/anh/mua2tang1.png" alt="">
+            </a>
+     
+
+    
+    </div>
+    <!--them san pham-->
+    <!--chen vao partial view tra sua hot-->
+    <div class="product" >
+
+        <div class="headlien">
+            <h3>Sản phẩm bán chạy</h3>
+        </div>
+        <ul class="products" >
+            @Html.Action("TSHotPartial", "Home")
+        </ul>
+    </div>
+</div>
 
 

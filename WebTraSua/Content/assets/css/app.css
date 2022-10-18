@@ -1,0 +1,6 @@
+/* Để các hình Slide được đẹp, không bị giựt mắt khi chuyển slide => tất cả các slide nên có chiều cao bằng nhau */
+.slider{
+    float:right;
+    width:800px;
+    height:300px;
+}

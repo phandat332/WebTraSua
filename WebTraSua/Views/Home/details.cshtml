@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "details";
+    Layout = "~/Views/Layout/NguoiDungLayout.cshtml";
+}
+
+
+<link href="~/Content/assets/css/app.css" rel="stylesheet" />
+<body>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3" style="border-right: 2px solid #1c161e; height: 400px;">
+                @Html.Action("ThuongHieuTS", "Home")
+            </div>
+            <!-- /.col-lg-3 -->
+            <div class="col-lg-9">
+                <div class="col-12">
+                    <h2 style="margin-left: 30px; color: rebeccapurple; font-weight: bold; "> THÔNG TIN CHI TIẾT TRÀ SỮA</h2>
+                    <div style="margin-bottom: 30px">
+                        <div style="margin-top: 40px; margin-left:30px;">
+                            <img src="~/HinhAnhSP/@Model.AnhBia" width="257.924px" height="257.924px" />
+                        </div>
+                        <div style="color: rebeccapurple; margin-top: -33%; margin-bottom: 25%; margin-left: 36%; width: 40%">
+
+                            <h1 style="font-weight"> Tên Trà Sữa: @Model.TenTS</h1>
+                            <p style="font-weight: bold; border-top: 2px solid cornflowerblue;">Mã Trà Sữa: @Model.MaTS</p>
+                            <p style="font-weight:bold">Tên thương hiệu : @Model.Thuonghieu.TenTH</pstyle="font-weight:bold>
+                            <p style="font-weight:bold"> Giá bán:<span style="color:red;font-size:16pt ">@Model.GiaTS VND</span></p>
+                            
+                            <div>
+                                <a style="clear: both; background-color: red; width: 120px;height: 35px; display: block; float: right;
+                        text-align: center; padding-top: 10px;color:white;
+                         text-decoration: none; font-weight: bold"
+                                   href="@Url.Action("AddtoCart","GioHang", new {id = @Model.MaTS})" class="list-group-item">
+                                    Đặt Mua
+                                </a>
+                            </div>
+                            <p style="color: mediumblue; font-weight: bold; margin-top: 18px; float: left;">
+                                @Html.ActionLink("Trở Về Trang Chủ", "Index")
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="~/Content/Admin/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/Admin/vendor/bootstrap/js/bootstrap.js"></script>
+    <!-- Liên kết JS do chúng ta tự viết (custom JS) -->
+    @*<script src="assets/js/app.js"></script>*@
+    <script src="~/Content/assets/js/app.js"></script>
+</body>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.125" name="dbQTrasua">
+  <DataContextMoniker Name="/dbQTrasuaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="11bde9ea-fcf6-4d8e-a0b7-7920d0c53ae5" absoluteBounds="6.25, 4, 2.125, 1.6395573244492212">
+      <DataClassMoniker Name="/dbQTrasuaDataContext/ChiTietHoaDon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b4ee468b-f1f2-4c10-a0a7-964b14137a2a" absoluteBounds="6.265, 4.46, 2.0949999999999998, 1.0795573244492211" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="714c0754-3a00-4227-a617-a174a66b92f0" absoluteBounds="0.75, 7.5, 2.125, 1.6395573244492203">
+      <DataClassMoniker Name="/dbQTrasuaDataContext/NhanVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="63921751-e410-450f-8961-65f5ea1fad4a" absoluteBounds="0.765, 7.96, 2.0949999999999998, 1.0795573244492211" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6e6c3b7f-9091-4b9f-8ae4-64a22e10789d" absoluteBounds="3.5, 3.75, 2.125, 2.0463281697034841">
+      <DataClassMoniker Name="/dbQTrasuaDataContext/HoaDon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af08dc52-c0b4-4c04-a1ec-8bf7225b1177" absoluteBounds="3.515, 4.21, 2.0949999999999998, 1.4863281697034836" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9b2830e4-1b33-4709-af28-8e466b556993" absoluteBounds="0.75, 4, 2.125, 1.4361719018220898">
+      <DataClassMoniker Name="/dbQTrasuaDataContext/Topping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d035328e-a29c-43e7-9bfd-38e44d2433c4" absoluteBounds="0.765, 4.46, 2.0949999999999998, 0.87617190182209015" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="36c11af1-9c1b-46e2-87a9-5d39b3aaf39f" absoluteBounds="6.25, 6.375, 2.125, 1.6395573244492212">
+      <DataClassMoniker Name="/dbQTrasuaDataContext/Thanhtoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79e53844-c5d9-467d-8cb7-0fd5a73ada13" absoluteBounds="6.265, 6.835, 2.0949999999999998, 1.0795573244492211" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c24a3f22-de31-40f1-9fc0-bd2b61701bda" absoluteBounds="0.75, 1.75, 2.125, 1.2327864791949594">
+      <DataClassMoniker Name="/dbQTrasuaDataContext/Thuonghieu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e89ba66-6e75-4688-a322-5314cb712143" absoluteBounds="0.765, 2.21, 2.0949999999999998, 0.67278647919495893" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.625 : 4.99919274707635); (6.25 : 4.99919274707635)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQTrasuaDataContext/HoaDon/HoaDon_ChiTietHoaDon" />
+      <nodes>
+        <classShapeMoniker Id="6e6c3b7f-9091-4b9f-8ae4-64a22e10789d" />
+        <classShapeMoniker Id="11bde9ea-fcf6-4d8e-a0b7-7920d0c53ae5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.875 : 4.71808595091104); (3.5 : 4.71808595091104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQTrasuaDataContext/Topping/Topping_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="9b2830e4-1b33-4709-af28-8e466b556993" />
+        <classShapeMoniker Id="6e6c3b7f-9091-4b9f-8ae4-64a22e10789d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.625 : 5.79632816970348); (6.25 : 6.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbQTrasuaDataContext/HoaDon/HoaDon_Thanhtoan" />
+      <nodes>
+        <classShapeMoniker Id="6e6c3b7f-9091-4b9f-8ae4-64a22e10789d" />
+        <classShapeMoniker Id="36c11af1-9c1b-46e2-87a9-5d39b3aaf39f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fcf87ad4-a823-46fd-a89e-7341dd2ac1ee" absoluteBounds="5, 9, 2, 1.8429427470763522">
+      <DataClassMoniker Name="/dbQTrasuaDataContext/TaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fdbbaa13-ca38-45ea-bf13-350f6c84f819" absoluteBounds="5.015, 9.46, 1.9700000000000002, 1.2829427470763524" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7fc91be9-105e-4158-b881-24771b5cfc52" absoluteBounds="8.625, 9.625, 2, 1.232786479194959">
+      <DataClassMoniker Name="/dbQTrasuaDataContext/PhanQuyen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c72edc78-3ed7-46ca-beaf-fb3ecfa715e6" absoluteBounds="8.64, 10.085, 1.9700000000000002, 0.67278647919495893" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.625 : 10.2339713735382); (7 : 10.2339713735382)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQTrasuaDataContext/PhanQuyen/PhanQuyen_TaiKhoan" />
+      <nodes>
+        <classShapeMoniker Id="7fc91be9-105e-4158-b881-24771b5cfc52" />
+        <classShapeMoniker Id="fcf87ad4-a823-46fd-a89e-7341dd2ac1ee" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b0a9275a-7ae6-46b6-b221-ec3ddb4754a4" absoluteBounds="5, 2.25, 2, 2.0463281697034836">
+      <DataClassMoniker Name="/dbQTrasuaDataContext/Trasua" />
+      <nestedChildShapes>
+        <elementListCompartment Id="796b836c-1ad1-4cb9-a734-8880c44249fc" absoluteBounds="5.015, 2.71, 1.9700000000000002, 1.4863281697034836" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7 : 3.1249995); (7.6875005 : 3.1249995); (7.6875005 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQTrasuaDataContext/Trasua/Trasua_ChiTietHoaDon" />
+      <nodes>
+        <classShapeMoniker Id="b0a9275a-7ae6-46b6-b221-ec3ddb4754a4" />
+        <classShapeMoniker Id="11bde9ea-fcf6-4d8e-a0b7-7920d0c53ae5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.875 : 2.61639323959748); (5 : 2.61639323959748)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQTrasuaDataContext/Thuonghieu/Thuonghieu_Trasua" />
+      <nodes>
+        <classShapeMoniker Id="c24a3f22-de31-40f1-9fc0-bd2b61701bda" />
+        <classShapeMoniker Id="b0a9275a-7ae6-46b6-b221-ec3ddb4754a4" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

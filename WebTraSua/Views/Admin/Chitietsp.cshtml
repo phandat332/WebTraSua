@@ -1,0 +1,44 @@
+﻿@model WebTraSua.Models.Trasua
+
+@{
+    ViewBag.Title = "Chitietsp";
+    Layout = "~/Views/Layout/Admin.cshtml";
+}
+<div>
+    <div class="container">
+
+        <div class="row">
+
+            <!-- /.col-lg-3 -->
+            <div class="col-lg-9">
+                <div class="col-12">
+                    <h2 style="margin-left: 30px; color: rebeccapurple; font-weight: bold; "> CHI TIẾT TRÀ SỮA</h2>
+                    <div style="margin-bottom: 30px">
+                        <div style="margin-top: 40px; margin-left:30px;">
+                            <img src="@Url.Content("~/HinhAnhSP/" + Model.AnhBia)"  width="257.924px" height="257.924px" />
+                        </div>
+                        <div style="color: rebeccapurple; margin-top: -33%; margin-bottom: 25%; margin-left: 36%; width: 40%">
+
+                            <h1 style="font-weight; font-size: 2em;"> Tên Trà Sữa:  @Html.DisplayFor(model => model.TenTS)</h1>
+                            <p style="font-weight: bold; border-top: 2px solid cornflowerblue;">Mã Trà Sữa: @Html.DisplayFor(model => model.MaTS)</p>
+                            <p style="font-weight:bold">Tên thương hiệu : @Html.DisplayFor(model => model.Thuonghieu.TenTH)</pstyle="font-weight:bold>
+                            <p style="font-weight:bold">
+                                Giá bán:<span style="color:red;font-size:16pt ">@string.Format("{0:0,0}", Model.GiaTS) VND</span>
+                            </p>
+      
+                            <a href="@Url.Action("ThemSanPham", "Admin")" class="btn btn-default" style="color: white; font-weight: bold; margin-top: 18px; float: left; background-color: #51bf64; ">
+                                Quay Về
+                            </a>
+                            <a href="@Url.Action("Suasp","Admin",new{ id = Model.MaTS })" class=" btn btn-default" style="color: white; font-weight: bold; margin-top: 18px; float: left; margin-left: 20px; background-color: #5f5fcd;">
+                               Chỉnh Sửa
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+  </div>

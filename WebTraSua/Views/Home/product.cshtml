@@ -1,0 +1,61 @@
+﻿@using PagedList.Mvc;
+@using WebTraSua.Models
+@model PagedList.PagedList<WebTraSua.Models.Trasua>
+@{
+    ViewBag.Title = "product";
+    Layout = "~/Views/Layout/NguoiDungLayout.cshtml";
+}
+<body>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3" style=" height: 500px; border-right: 2px solid #6c4977e8;">
+                @Html.Action("ThuongHieuTS", "Home")
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-9">
+                <div class="col-12">
+                    <ul class="products" style="margin-top:20px">
+                        @{
+                            foreach (var item in Model)
+                            {
+                                <li style="flex-basis: 28%;">
+                                    <div class="product-item">
+
+                                        <div class="product-top">
+                                            <a href="@Url.Action("details", "Home", new {id = item.MaTS})" class="product-thumb">
+                                                <img src="@Url.Content("/HinhAnhSP/" + item.AnhBia)" width="250" height="250" />
+                                            </a>
+                                            <a href="/GioHang/AddtoCart/@item.MaTS" class="buy-now">
+                                                mua ngay
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="@Url.Action("details", "Home", new {id = item.MaTS})" class="product-name"> @item.TenTS</a>
+                                            <div class="product-price">@item.GiaTS VND</div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="~/Content/Admin/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/Admin/vendor/bootstrap/js/bootstrap.js"></script>
+    <!-- Liên kết JS do chúng ta tự viết (custom JS) -->
+    @*<script src="assets/js/app.js"></script>*@
+    <script src="~/Content/assets/js/app.js"></script>
+</body>
+<div style="text-align: center; ">
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+    <div class="MenuTrang"style="padding-left: 10%; " >
+        @Html.PagedListPager(Model, page => Url.Action("product", new { page = page }))
+    </div>
+</div>

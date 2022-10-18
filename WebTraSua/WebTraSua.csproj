@@ -51,9 +51,17 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Build.Tasks.v4.0" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -63,6 +71,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -128,153 +137,37 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\Admin_QLsanphamController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ChuDeController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TimkiemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ChiTietHoaDon.cs">
-      <DependentUpon>QLTrasua.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\GioHang.cs" />
-    <Compile Include="Models\HoaDon.cs">
-      <DependentUpon>QLTrasua.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NhanVien.cs">
-      <DependentUpon>QLTrasua.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\QLTrasua.Context.cs">
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\dbQTrasua.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLTrasua.Context.tt</DependentUpon>
+      <DependentUpon>dbQTrasua.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Models\QLTrasua.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLTrasua.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\QLTrasua.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLTrasua.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>QLTrasua.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Thanhtoan.cs">
-      <DependentUpon>QLTrasua.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Thuonghieu.cs">
-      <DependentUpon>QLTrasua.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Trasua.cs">
-      <DependentUpon>QLTrasua.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Models\Trasua.metadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="anh\1.jpg" />
-    <Content Include="anh\2.jpg" />
-    <Content Include="anh\3.jpg" />
-    <Content Include="anh\4.jpg" />
-    <Content Include="anh\5.jpg" />
-    <Content Include="anh\6.jpg" />
+    <Content Include="anh\banner.jpg" />
+    <Content Include="anh\giohang.png" />
     <Content Include="anh\logo.png" />
     <Content Include="anh\mua2tang1.png" />
+    <Content Include="anh\OIP.jpg" />
+    <Content Include="anh\quangcao1.jpg" />
+    <Content Include="anh\trasuaden.jpg" />
     <Content Include="Content\Admin\css\demo.css" />
     <Content Include="Content\Admin\css\main.css" />
-    <Content Include="Content\Admin\img\apple-icon.png" />
-    <Content Include="Content\Admin\img\favicon.png" />
-    <Content Include="Content\Admin\img\klorofilpro.png" />
-    <Content Include="Content\Admin\img\logo-minimal.png" />
-    <Content Include="Content\Admin\img\logo.png" />
     <Content Include="Content\Admin\img\uploaded-file.jpg" />
     <Content Include="Content\Admin\img\user-small.png" />
     <Content Include="Content\Admin\img\user.png" />
     <Content Include="Content\Admin\scripts\common.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\bootstrap-datepicker.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\bootstrap-datepicker3.css" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\css\bootstrap-datepicker.css" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\css\bootstrap-datepicker.min.css" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\css\bootstrap-datepicker.standalone.css" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\css\bootstrap-datepicker.standalone.min.css" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.css" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.min.css" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.min.css" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\js\bootstrap-datepicker.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\js\bootstrap-datepicker.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ar.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.az.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.bg.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.bs.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ca.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.cs.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.cy.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.da.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.de.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.el.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.en-AU.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.en-GB.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.eo.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.es.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.et.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.eu.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fa.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fi.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fo.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fr-CH.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.fr.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.gl.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.he.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.hr.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.hu.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.hy.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.id.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.is.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.it-CH.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.it.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ja.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ka.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.kh.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.kk.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ko.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.kr.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.lt.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.lv.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.me.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.mk.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.mn.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ms.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.nb.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.nl-BE.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.nl.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.no.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.pl.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.pt-BR.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.pt.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ro.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.rs-latin.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.rs.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.ru.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sk.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sl.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sq.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sr-latin.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sr.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sv.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.sw.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.th.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.tr.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.uk.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.vi.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.zh-CN.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-datepicker\locales\bootstrap-datepicker.zh-TW.min.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-markdown\bootstrap-markdown.js" />
-    <Content Include="Content\Admin\vendor\bootstrap-markdown\bootstrap-markdown.min.css" />
-    <Content Include="Content\Admin\vendor\bootstrap-multiselect\bootstrap-multiselect.css" />
-    <Content Include="Content\Admin\vendor\bootstrap-multiselect\bootstrap-multiselect.js" />
     <Content Include="Content\Admin\vendor\bootstrap-progressbar\css\bootstrap-progressbar-3.3.4.css" />
     <Content Include="Content\Admin\vendor\bootstrap-progressbar\css\bootstrap-progressbar-3.3.4.min.css" />
     <Content Include="Content\Admin\vendor\bootstrap-progressbar\js\bootstrap-progressbar.js" />
@@ -287,29 +180,15 @@
     <Content Include="Content\Admin\vendor\bootstrap\js\bootstrap.js" />
     <Content Include="Content\Admin\vendor\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\Admin\vendor\bootstrap\js\npm.js" />
-    <Content Include="Content\Admin\vendor\chartist-plugin-axistitle\chartist-plugin-axistitle.min.js" />
-    <Content Include="Content\Admin\vendor\chartist-plugin-legend-latest\chartist-plugin-legend.js" />
-    <Content Include="Content\Admin\vendor\chartist-plugin-tooltip\chartist-plugin-tooltip.css" />
-    <Content Include="Content\Admin\vendor\chartist-plugin-tooltip\chartist-plugin-tooltip.min.js" />
     <Content Include="Content\Admin\vendor\chartist\css\chartist.css" />
     <Content Include="Content\Admin\vendor\chartist\css\chartist.min.css" />
     <Content Include="Content\Admin\vendor\chartist\js\chartist.js" />
     <Content Include="Content\Admin\vendor\chartist\js\chartist.min.js" />
-    <Content Include="Content\Admin\vendor\dropify\css\demo.css" />
-    <Content Include="Content\Admin\vendor\dropify\css\dropify.css" />
-    <Content Include="Content\Admin\vendor\dropify\css\dropify.min.css" />
-    <Content Include="Content\Admin\vendor\dropify\fonts\dropify.svg" />
-    <Content Include="Content\Admin\vendor\dropify\js\dropify.js" />
-    <Content Include="Content\Admin\vendor\dropify\js\dropify.min.js" />
     <Content Include="Content\Admin\vendor\font-awesome\css\font-awesome.css" />
     <Content Include="Content\Admin\vendor\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\Admin\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Admin\vendor\jquery-slimscroll\jquery.slimscroll.js" />
     <Content Include="Content\Admin\vendor\jquery-slimscroll\jquery.slimscroll.min.js" />
-    <Content Include="Content\Admin\vendor\jquery-sparkline\js\jquery.sparkline.js" />
-    <Content Include="Content\Admin\vendor\jquery-sparkline\js\jquery.sparkline.min.js" />
-    <Content Include="Content\Admin\vendor\jquery.maskedinput\jquery.maskedinput.js" />
-    <Content Include="Content\Admin\vendor\jquery.maskedinput\jquery.maskedinput.min.js" />
     <Content Include="Content\Admin\vendor\jquery\core.js" />
     <Content Include="Content\Admin\vendor\jquery\jquery.js" />
     <Content Include="Content\Admin\vendor\jquery\jquery.min.js" />
@@ -317,118 +196,28 @@
     <Content Include="Content\Admin\vendor\jquery\jquery.slim.min.js" />
     <Content Include="Content\Admin\vendor\linearicons\fonts\Linearicons-Free.svg" />
     <Content Include="Content\Admin\vendor\linearicons\style.css" />
-    <Content Include="Content\Admin\vendor\markdown\markdown.js" />
     <Content Include="Content\Admin\vendor\metisMenu\metisMenu.css" />
     <Content Include="Content\Admin\vendor\metisMenu\metisMenu.js" />
-    <Content Include="Content\Admin\vendor\parsleyjs\css\parsley.css" />
-    <Content Include="Content\Admin\vendor\parsleyjs\js\parsley.js" />
-    <Content Include="Content\Admin\vendor\parsleyjs\js\parsley.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-ar-AR.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-ar-AR.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-bg-BG.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-bg-BG.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-ca-ES.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-ca-ES.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-cs-CZ.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-cs-CZ.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-da-DK.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-da-DK.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-de-DE.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-de-DE.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-el-GR.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-el-GR.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-es-ES.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-es-ES.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-es-EU.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-es-EU.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-fa-IR.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-fa-IR.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-fi-FI.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-fi-FI.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-fr-FR.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-fr-FR.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-gl-ES.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-gl-ES.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-he-IL.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-he-IL.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-hr-HR.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-hr-HR.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-hu-HU.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-hu-HU.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-id-ID.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-id-ID.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-it-IT.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-it-IT.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-ja-JP.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-ja-JP.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-ko-KR.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-ko-KR.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-lt-LT.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-lt-LT.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-lt-LV.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-lt-LV.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-nb-NO.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-nb-NO.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-nl-NL.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-nl-NL.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-pl-PL.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-pl-PL.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-pt-BR.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-pt-BR.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-pt-PT.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-pt-PT.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-ro-RO.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-ro-RO.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-ru-RU.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-ru-RU.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-sk-SK.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-sk-SK.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-sl-SI.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-sl-SI.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-sr-RS-Latin.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-sr-RS-Latin.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-sr-RS.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-sr-RS.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-sv-SE.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-sv-SE.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-ta-IN.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-ta-IN.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-th-TH.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-th-TH.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-tr-TR.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-tr-TR.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-uk-UA.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-uk-UA.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-vi-VN.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-vi-VN.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-zh-CN.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-zh-CN.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-zh-TW.js" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-zh-TW.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\plugin\databasic\summernote-ext-databasic.css" />
-    <Content Include="Content\Admin\vendor\summernote\plugin\databasic\summernote-ext-databasic.js" />
-    <Content Include="Content\Admin\vendor\summernote\plugin\databasic\summernote-ext-databasic.min.css" />
-    <Content Include="Content\Admin\vendor\summernote\plugin\databasic\summernote-ext-databasic.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\plugin\hello\summernote-ext-hello.js" />
-    <Content Include="Content\Admin\vendor\summernote\plugin\hello\summernote-ext-hello.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\plugin\specialchars\summernote-ext-specialchars.js" />
-    <Content Include="Content\Admin\vendor\summernote\plugin\specialchars\summernote-ext-specialchars.min.js" />
-    <Content Include="Content\Admin\vendor\summernote\summernote.css" />
-    <Content Include="Content\Admin\vendor\summernote\summernote.js" />
-    <Content Include="Content\Admin\vendor\summernote\summernote.min.js" />
-    <Content Include="Content\Admin\vendor\to-markdown\to-markdown.js" />
     <Content Include="Content\Admin\vendor\toastr\toastr.css" />
     <Content Include="Content\Admin\vendor\toastr\toastr.js" />
     <Content Include="Content\Admin\vendor\toastr\toastr.min.css" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\assets\css\app.css" />
+    <Content Include="Content\assets\img\placeholder_700x400.png" />
+    <Content Include="Content\assets\img\slider-1.jpg" />
+    <Content Include="Content\assets\img\slider-2.jpg" />
+    <Content Include="Content\assets\img\slider-3.jpg" />
+    <Content Include="Content\assets\js\app.js" />
+    <Content Include="Content\NguoiDungLayoutCss\about.css" />
     <Content Include="Content\NguoiDungLayoutCss\main.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="HinhAnhSP\1.jpg" />
+    <Content Include="HinhAnhSP\3.jpg" />
+    <Content Include="HinhAnhSP\6.jpg" />
+    <Content Include="HinhAnhSP\8.jpg" />
+    <Content Include="HinhAnhSP\hinh-nen-game-dep-23.jpg" />
+    <Content Include="HinhAnhSP\tra-sua-tran-chau.jpg" />
     <Content Include="HinhAnhSP\Tradao.jpg" />
     <Content Include="HinhAnhSP\trasuabacha.jpg" />
     <Content Include="HinhAnhSP\Trasuachanchauduongden.jpg" />
@@ -437,21 +226,8 @@
     <Content Include="HinhAnhSP\Trasualipton.jpg" />
     <Content Include="HinhAnhSP\Trasuamatcha.jpg" />
     <Content Include="HinhAnhSP\Trasuathaixanh.jpg" />
-    <Content Include="Models\QLTrasua.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLTrasua.edmx</DependentUpon>
-      <LastGenOutput>QLTrasua.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\QLTrasua.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLTrasua.edmx</DependentUpon>
-      <LastGenOutput>QLTrasua.cs</LastGenOutput>
-    </Content>
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\Admin\css\demo.css.map" />
     <Content Include="Content\Admin\css\main.css.map" />
-    <Content Include="Content\Admin\vendor\bootstrap-multiselect\bootstrap-multiselect.less" />
     <Content Include="Content\Admin\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\Admin\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\Admin\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
@@ -459,31 +235,31 @@
     <Content Include="Content\Admin\vendor\chartist\map\chartist.css.map" />
     <Content Include="Content\Admin\vendor\chartist\map\chartist.min.js.map" />
     <Content Include="Content\Admin\vendor\chartist\scss\chartist.scss" />
-    <Content Include="Content\Admin\vendor\dropify\fonts\dropify.eot" />
-    <Content Include="Content\Admin\vendor\dropify\fonts\dropify.ttf" />
-    <Content Include="Content\Admin\vendor\dropify\fonts\dropify.woff" />
     <Content Include="Content\Admin\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\Admin\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\Admin\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\Admin\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\Admin\vendor\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="Content\Admin\vendor\jquery\jquery.min.map" />
-    <Content Include="Content\Admin\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Content\Admin\vendor\linearicons\fonts\Linearicons-Free.eot" />
     <Content Include="Content\Admin\vendor\linearicons\fonts\Linearicons-Free.ttf" />
     <Content Include="Content\Admin\vendor\linearicons\fonts\Linearicons-Free.woff" />
     <Content Include="Content\Admin\vendor\linearicons\fonts\Linearicons-Free.woff2" />
-    <Content Include="Content\Admin\vendor\summernote\font\summernote.eot" />
-    <Content Include="Content\Admin\vendor\summernote\font\summernote.ttf" />
-    <Content Include="Content\Admin\vendor\summernote\font\summernote.woff" />
-    <Content Include="Content\Admin\vendor\summernote\lang\summernote-mn-MN" />
-    <EntityDeploy Include="Models\QLTrasua.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLTrasua.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\QLTrasua.edmx.diagram">
-      <DependentUpon>QLTrasua.edmx</DependentUpon>
+    <Content Include="Content\Admin\vendor\jquery\jquery.min.map" />
+    <Content Include="Content\Admin\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Nevolslide\default.css" />
+    <Content Include="Nevolslide\jquery.nivo.slider.js" />
+    <Content Include="Nevolslide\jquery.nivo.slider.pack.js" />
+    <Content Include="Nevolslide\nivo-slider.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Models\dbQTrasua.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbQTrasua.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </Content>
+    <None Include="Models\dbQTrasua.dbml.layout">
+      <DependentUpon>dbQTrasua.dbml</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -507,28 +283,43 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Layout\NguoiDungLayout.cshtml" />
-    <Content Include="Views\Admin_QLsanpham\Index.cshtml" />
-    <Content Include="Views\Layout\AdminLayoutPage1.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\GioHang\BagCart.cshtml" />
     <Content Include="Views\Home\TSHotPartial.cshtml" />
+    <Content Include="Views\Layout\Admin.cshtml" />
+    <Content Include="Views\Admin\Chitietsp.cshtml" />
+    <Content Include="Views\Admin\Xoasp.cshtml" />
+    <Content Include="Views\Admin\ThemSanPham.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\product.cshtml" />
+    <Content Include="Views\Home\details.cshtml" />
+    <Content Include="Views\GioHang\Index.cshtml" />
+    <Content Include="Views\Admin\Themmoisp.cshtml" />
+    <Content Include="Views\Home\ThuongHieuTS.cshtml" />
+    <Content Include="Views\Home\Lienhe.cshtml" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Views\Admin\Suasp.cshtml" />
+    <Content Include="Views\Timkiem\KQTimkiem.cshtml" />
+    <Content Include="Views\Admin\QLThuonghieu.cshtml" />
+    <Content Include="Views\Admin\Themmoith.cshtml" />
+    <Content Include="Views\Admin\Xoath.cshtml" />
+    <Content Include="Views\Admin\Suath.cshtml" />
+    <Content Include="Views\ChuDe\TSTheoThuongHieu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\GioHang\" />
+    <Folder Include="Views\text\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>

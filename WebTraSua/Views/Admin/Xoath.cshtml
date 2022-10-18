@@ -1,0 +1,41 @@
+﻿@model WebTraSua.Models.Thuonghieu
+
+@{
+    ViewBag.Title = "Xoath";
+    Layout = "~/Views/Layout/Admin.cshtml";
+}
+
+<h2> XÓA THƯƠNG HIỆU</h2>
+
+<h3>Bạn muốn xóa thương hiệu này??</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Mã Thương Hiệu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaTH)
+        </dd>
+        <dt>
+            Tên Thương Hiệu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTH)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style="margin-left: 28px;">
+            <a href="@Url.Action("QLThuonghieu", "Admin")" class="btn btn-default" style=" color: white; background-color: #4aa331; margin-right: 50px;"> Quay về </a> 
+            <input type="submit" value="Xóa" class="btn btn-default" style="color: white; background-color: #e22020;" /> 
+
+        </div>
+    }
+</div>

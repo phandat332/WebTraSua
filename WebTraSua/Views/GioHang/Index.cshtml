@@ -1,0 +1,90 @@
+﻿@model WebTraSua.Models.Cart
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Tên Tra Sữa</th>
+                <th> Hình Ảnh</th>
+                <th> Giá </th>
+                <th> Số lượng</th>
+                <th></th>
+                <th> Thành Tiền</th>
+                <th> Xóa khỏi giỏ</th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                double total = Convert.ToDouble(item._shopping_Trasua.GiaTS.Value * item._shopping_quantity);
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item._shopping_Trasua.TenTS)
+                    </td>
+                    <td>
+                        <img src="@Url.Content("/HinhAnhSP/" + item._shopping_Trasua.AnhBia)" style="width :100px; height :100px; " />
+
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item._shopping_Trasua.GiaTS)
+                    </td>
+                    <td>
+                        @using (Html.BeginForm("Update_Quantity_Cart", "GioHang"))
+                        {
+                            <input type="hidden" value="@item._shopping_Trasua.MaTS" name="ID_Product" />
+                            <input type="number" value="@item._shopping_quantity" name="Quantity" />
+                            //<input type="submit" value="Thêm sản phẩm" />
+                        }
+
+                    </td>
+                    <td>
+                        <a href="@Url.Action("details", "Home", new {id = item._shopping_Trasua.MaTS})" style="font-size:12px; clear: both; background-color: #33CC66;
+                     width: 120px; height: 35px; display: block; float: left; text-align: center; padding-top: 10px; color: white; text-decoration: none; font-weight: bold ">
+                            THÊM SẢN PHẨM
+                        </a>
+                    </td>
+                    <td>
+                        @total VND
+                    </td>
+                    <td>
+                        <a style="clear: both; background-color: red; width: 100px;height: 35px; display: block; float: left;
+                        text-align: center; padding-top: 9px;color:white;
+                         text-decoration: none; font-weight: bold" href="/GioHang/RemoveCart/@item._shopping_Trasua.MaTS"> Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <td colspan="7" style="text-align:right">
+                    <a style="clear: both; background-color: #33CC66; width: 120px; height: 35px; display: block; float: right; text-align: center;
+                               padding-top: 9px; color: white; text-decoration: none; font-weight: bold; "
+                             href="@Url.Action("Index","GioHang")">
+                        Thanh Toán
+                    </a>                   
+                </td>
+            </tr>
+        </tfoot>
+        <tfoot>
+            <tr>
+                <td colspan="7" style="text-align:right">
+                    Tổng Tiền: @Model.Total_Money() VND
+                </td>
+
+            </tr>
+        </tfoot>
+
+    </table>
+    <a href="@Url.Action("Index","Home")"><==== Quay trở về trang chủ</a>
+}
+
+
+

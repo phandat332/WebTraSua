@@ -1,33 +1,29 @@
-﻿
-
-@using WebTraSua.Models
+﻿@using WebTraSua.Models
 @model List<Trasua>
-<link href="~/Content/NguoiDungLayoutCss/main.css" rel="stylesheet" />
 <ul class="products">
-    <ul class="products">
+    <ul class="products" style="justify-content: center;">
         @{
             foreach (var item in Model)
             {
                 <li>
                     <div class="product-item">
+
                         <div class="product-top">
-                            <a href="" class="product-thumb">
+                            <a href="@Url.Action("details", "Home", new {id = item.MaTS})" class="product-thumb">
                                 <img src="@Url.Content("/HinhAnhSP/" + item.AnhBia)" width="286.16" height="286.16" />
                             </a>
-                            <a href="" class="buy-now">
+                            <a href="/GioHang/AddtoCart/@item.MaTS" class="buy-now">
                                 mua ngay
                             </a>
                         </div>
                         <div class="product-info">
-                            <a href="" class="product-name"> @item.TenTS</a>
+                            <a href="@Url.Action("details", "Home", new {id = item.MaTS})" class="product-name"> @item.TenTS</a>
                             <div class="product-price">@item.GiaTS VND</div>
                         </div>
+
                     </div>
                 </li>
             }
         }
     </ul>
 </ul>
-
-
-

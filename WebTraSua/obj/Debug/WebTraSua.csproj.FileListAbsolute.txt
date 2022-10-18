@@ -72,7 +72,6 @@ E:\cong nghe phan mem\webtrasua\WebTraSua\WebTraSua\bin\System.Web.WebPages.Razo
 E:\cong nghe phan mem\webtrasua\WebTraSua\WebTraSua\bin\Newtonsoft.Json.xml
 E:\cong nghe phan mem\webtrasua\WebTraSua\WebTraSua\bin\Antlr3.Runtime.pdb
 E:\cong nghe phan mem\webtrasua\WebTraSua\WebTraSua\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\cong nghe phan mem\webtrasua\WebTraSua\WebTraSua\obj\Debug\WebTraSua.csproj.AssemblyReference.cache
 E:\cong nghe phan mem\webtrasua\WebTraSua\WebTraSua\obj\Debug\WebTraSua.csproj.CoreCompileInputs.cache
 E:\cong nghe phan mem\webtrasua\WebTraSua\WebTraSua\obj\Debug\WebTraSua.csproj.CopyComplete
 E:\cong nghe phan mem\webtrasua\WebTraSua\WebTraSua\obj\Debug\WebTraSua.dll
@@ -81,3 +80,8 @@ E:\cong nghe phan mem\webtrasua\webtrasua\WebTraSua\bin\EntityFramework.dll
 E:\cong nghe phan mem\webtrasua\webtrasua\WebTraSua\bin\EntityFramework.SqlServer.dll
 E:\cong nghe phan mem\webtrasua\webtrasua\WebTraSua\bin\EntityFramework.xml
 E:\cong nghe phan mem\webtrasua\webtrasua\WebTraSua\bin\EntityFramework.SqlServer.xml
+E:\cong nghe phan mem\webtrasua\webtrasua\WebTraSua\bin\PagedList.dll
+E:\cong nghe phan mem\webtrasua\webtrasua\WebTraSua\bin\PagedList.Mvc.dll
+E:\cong nghe phan mem\webtrasua\webtrasua\WebTraSua\bin\PagedList.xml
+E:\cong nghe phan mem\webtrasua\webtrasua\WebTraSua\bin\PagedList.Mvc.xml
+E:\cong nghe phan mem\webtrasua\webtrasua\WebTraSua\obj\Debug\WebTraSua.csproj.AssemblyReference.cache

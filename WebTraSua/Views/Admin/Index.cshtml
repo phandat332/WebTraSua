@@ -1,0 +1,66 @@
+﻿
+@{
+    Layout = "~/Views/Layout/Admin.cshtml";
+    ViewBag.Title = "Index";
+}
+<!-- khởi động trang admin -->
+<h2>TRANG CHỦ</h2>
+<body>
+    <div class="container-fluid">
+        <h1 class="sr-only">Dashboard</h1>
+        <!-- WEBSITE ANALYTICS -->
+        <div class="dashboard-section">
+
+            <div class="dashboard-section no-margin">
+                <div class="section-heading clearfix">
+                    <h2 class="section-title"><i class="lnr lnr-inbox"></i> Người dùng </h2>
+                    <a href="#" class="right">Xem báo cáo người dùng</a>
+                </div>
+                <div class="panel-content">
+                    <div class="row">
+
+                        <div class="col-md-3 col-sm-6">
+                            <p class="metric-inline"><i class="fa fa-database"></i> + @ViewBag.totalElements  <span>Sản phẩm</span></p>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6">
+                            <p class="metric-inline"><i class="lnr lnr-users"></i> @ViewBag.Description <span>Người dùng</span></p>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <p class="metric-inline"><i class="lnr lnr-store"></i> @ViewBag.thuonghieu<span>Thương hiệu </span></p>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <p class="metric-inline"><i class="fa fa-user-circle-o"></i>@ViewBag.quyen<span>Admin</span></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="section-heading clearfix">
+                    <h2 class="section-title"><i class="lnr lnr-inbox"></i> Tổng Quan </h2>
+                    <a href="#" class="right">Xem báo cáo tổng quan</a>
+                </div>
+                <div class="panel-content">
+                    <div class="row">
+
+                        <div class="col-md-3 col-sm-6">
+                            <p class="metric-inline"><i class="lnr lnr-eye"></i> 2 <span>Lượt ghé</span></p>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6">
+                            <p class="metric-inline"><i class="lnr lnr-pencil"></i> 0<span>Lượt bình luận</span></p>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <p class="metric-inline"><i class="lnr lnr-flag"></i>20000 vnd <span>Tổng thu nhập </span></p>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <p class="metric-inline"><i class="lnr lnr-thumbs-up"></i>0<span>lượt thích</span></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- END SOCIAL -->
+        </div>
+    </div>
+</body>
+<!-- END MAIN CONTENT -->

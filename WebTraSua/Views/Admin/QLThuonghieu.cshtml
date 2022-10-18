@@ -1,0 +1,55 @@
+﻿@using PagedList.Mvc;
+@using WebTraSua.Models
+@model PagedList.PagedList<WebTraSua.Models.Thuonghieu>
+
+@{
+    ViewBag.Title = "QLThuonghieu";
+    Layout = "~/Views/Layout/Admin.cshtml";
+}
+<link href="~/Content/Admin/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<h2 style="font-weight: bold;">DANH SÁCH THƯƠNG HIỆU</h2>
+
+<a href="@Url.Action("Themmoith", "Admin")" class="btn btn-default" style="margin-bottom: 8px; color: white; background-color: rebeccapurple; ">
+    Thêm thương hiệu
+</a>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MaTH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().TenTH)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaTH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTH)
+            </td>  
+            <td>
+                @Html.ActionLink("sửa", "Suath", new { id = item.MaTH }, new { @class = " btn btn-default", @Style= "color:white;background-color:#23ac3a;" })
+                @Html.ActionLink("Xóa", "Xoath", new { id = item.MaTH }, new { @class = " btn btn-default", @Style = "color:white;background-color:red;" })
+            </td>
+        </tr>
+    }
+</table>
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("QLThuonghieu", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+
+    .AnhSP {
+        width: 8rem;
+    }
+</style>
+

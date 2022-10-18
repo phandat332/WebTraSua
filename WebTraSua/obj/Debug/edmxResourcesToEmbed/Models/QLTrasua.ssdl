@@ -15,7 +15,6 @@
     </Key>
     <Property Name="MaHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Ngay" Type="datetime" />
-    <Property Name="MaNhanVien" Type="int" />
     <Property Name="MaTP" Type="int" />
     <Property Name="TongTien" Type="float" />
     <Property Name="GiamGia" Type="float" />
@@ -63,8 +62,6 @@
     <Property Name="TenTS" Type="nvarchar" MaxLength="30" />
     <Property Name="GiaTS" Type="decimal" Precision="18" Scale="0" />
     <Property Name="MaTH" Type="int" />
-    <Property Name="TenTH" Type="varchar" MaxLength="50" />
-    <Property Name="Moi" Type="int" />
     <Property Name="AnhBia" Type="nvarchar(max)" />
   </EntityType>
   <Association Name="FK_ChiTietHoaDon_HoaDon">
@@ -88,18 +85,6 @@
       </Principal>
       <Dependent Role="ChiTietHoaDon">
         <PropertyRef Name="MaTS" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_HoaDon_NhanVien">
-    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
-    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NhanVien">
-        <PropertyRef Name="MaNhanVien" />
-      </Principal>
-      <Dependent Role="HoaDon">
-        <PropertyRef Name="MaNhanVien" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -142,10 +127,6 @@
     <AssociationSet Name="FK_ChiTietHoaDon_Trasua" Association="Self.FK_ChiTietHoaDon_Trasua">
       <End Role="Trasua" EntitySet="Trasua" />
       <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDon" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HoaDon_NhanVien" Association="Self.FK_HoaDon_NhanVien">
-      <End Role="NhanVien" EntitySet="NhanVien" />
-      <End Role="HoaDon" EntitySet="HoaDon" />
     </AssociationSet>
     <AssociationSet Name="FK_Thanhtoan_Hoadon" Association="Self.FK_Thanhtoan_Hoadon">
       <End Role="HoaDon" EntitySet="HoaDon" />

@@ -1,0 +1,85 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model PagedList.PagedList<WebTraSua.Models.Trasua>
+
+@{
+    ViewBag.Title = "ThemSanPham";
+    Layout = "~/Views/Layout/Admin.cshtml";
+}
+<link href="~/Content/Admin/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<h2 style="font-weight: bold;">Danh sách trà sữa</h2>
+
+
+<a href="@Url.Action("Themmoisp", "Admin")" class="btn btn-default" style="margin-bottom: 8px; color: white; background-color: rebeccapurple; ">
+    Thêm mới sản phẩm
+</a>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MaTS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().TenTS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().GiaTS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MaTH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().AnhBia)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaTS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaTS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thuonghieu.TenTH)
+            </td>
+            <td>
+                <img class="AnhSP" src="@Url.Content("~/HinhAnhSP/"+item.AnhBia)" />
+            </td>
+            <td>
+
+                @Html.ActionLink("sửa", "Suasp", new { id = item.MaTS }, new { @class = " btn btn-default", @Style = "color:white;background-color:#23ac3a;" })
+
+
+                @Html.ActionLink("Chi tiết", "Chitietsp", new { id = item.MaTS }, new { @class = " btn btn-default", @Style = "color:white;background-color:#2e2ebf;" })
+
+
+                @Html.ActionLink("xóa", "Xoasp", new { id = item.MaTS }, new { @class = " btn btn-default", @Style = "color:white;background-color:red;" })
+
+
+
+
+            </td>
+        </tr>
+    }
+
+</table>
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("ThemSanPham", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+
+    .AnhSP {
+        width: 8rem;
+    }
+</style>

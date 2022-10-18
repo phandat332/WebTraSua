@@ -16,7 +16,6 @@
         <MappingFragment StoreEntitySet="HoaDon">
           <ScalarProperty Name="MaHD" ColumnName="MaHD" />
           <ScalarProperty Name="Ngay" ColumnName="Ngay" />
-          <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
           <ScalarProperty Name="MaTP" ColumnName="MaTP" />
           <ScalarProperty Name="TongTien" ColumnName="TongTien" />
           <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
@@ -66,12 +65,10 @@
       <EntityTypeMapping TypeName="QLTraSuaModel.Trasua">
         <MappingFragment StoreEntitySet="Trasua">
           <ScalarProperty Name="AnhBia" ColumnName="AnhBia" />
-          <ScalarProperty Name="Moi" ColumnName="Moi" />
           <ScalarProperty Name="MaTS" ColumnName="MaTS" />
           <ScalarProperty Name="TenTS" ColumnName="TenTS" />
           <ScalarProperty Name="GiaTS" ColumnName="GiaTS" />
           <ScalarProperty Name="MaTH" ColumnName="MaTH" />
-          <ScalarProperty Name="TenTH" ColumnName="TenTH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

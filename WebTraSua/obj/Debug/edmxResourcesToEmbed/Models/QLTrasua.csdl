@@ -17,12 +17,10 @@
     </Key>
     <Property Name="MaHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Ngay" Type="DateTime" Precision="3" />
-    <Property Name="MaNhanVien" Type="Int32" />
     <Property Name="MaTP" Type="Int32" />
     <Property Name="TongTien" Type="Double" />
     <Property Name="GiamGia" Type="Double" />
     <NavigationProperty Name="ChiTietHoaDon" Relationship="Self.FK_ChiTietHoaDon_HoaDon" FromRole="HoaDon" ToRole="ChiTietHoaDon" />
-    <NavigationProperty Name="NhanVien" Relationship="Self.FK_HoaDon_NhanVien" FromRole="HoaDon" ToRole="NhanVien" />
     <NavigationProperty Name="Thanhtoan" Relationship="Self.FK_Thanhtoan_Hoadon" FromRole="HoaDon" ToRole="Thanhtoan" />
   </EntityType>
   <EntityType Name="NhanVien">
@@ -33,7 +31,6 @@
     <Property Name="Ten" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="MatKhau" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="TenDangNhap" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="HoaDon" Relationship="Self.FK_HoaDon_NhanVien" FromRole="NhanVien" ToRole="HoaDon" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -71,10 +68,8 @@
     <Property Name="TenTS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="GiaTS" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="MaTH" Type="Int32" />
-    <Property Name="TenTH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ChiTietHoaDon" Relationship="Self.FK_ChiTietHoaDon_Trasua" FromRole="Trasua" ToRole="ChiTietHoaDon" />
     <NavigationProperty Name="Thuonghieu" Relationship="Self.FK_Trasua_Thuonghieu" FromRole="Trasua" ToRole="Thuonghieu" />
-    <Property Name="Moi" Type="Int32" />
     <Property Name="AnhBia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_ChiTietHoaDon_HoaDon">
@@ -98,18 +93,6 @@
       </Principal>
       <Dependent Role="ChiTietHoaDon">
         <PropertyRef Name="MaTS" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_HoaDon_NhanVien">
-    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
-    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NhanVien">
-        <PropertyRef Name="MaNhanVien" />
-      </Principal>
-      <Dependent Role="HoaDon">
-        <PropertyRef Name="MaNhanVien" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -152,10 +135,6 @@
     <AssociationSet Name="FK_ChiTietHoaDon_Trasua" Association="Self.FK_ChiTietHoaDon_Trasua">
       <End Role="Trasua" EntitySet="Trasua" />
       <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDon" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HoaDon_NhanVien" Association="Self.FK_HoaDon_NhanVien">
-      <End Role="NhanVien" EntitySet="NhanVien" />
-      <End Role="HoaDon" EntitySet="HoaDon" />
     </AssociationSet>
     <AssociationSet Name="FK_Thanhtoan_Hoadon" Association="Self.FK_Thanhtoan_Hoadon">
       <End Role="HoaDon" EntitySet="HoaDon" />
